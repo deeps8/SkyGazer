@@ -1,0 +1,7 @@
+{
+  "name": "sky-gazing",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
