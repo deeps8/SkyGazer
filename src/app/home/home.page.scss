@@ -1,27 +1,86 @@
-#container {
-  text-align: center;
 
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
+ion-content{
+  ion-toolbar{
+    --background:transparent;
+    ion-title{
+      font-size: 1rem;
+    padding: 4px 0 0 4px;
+    word-break: break-word;
+    color: white;
+    font-weight: 100;
+    font-family: bluenight;
+    letter-spacing: 1px;
+    }
+    
+    ion-buttons{
+      ion-icon{
+        font-size: 2.5rem;
+      }
+    }
+  }
+  .container{
+    width: 100%;
+    height: 100%;
+    background-image: url(../../assets/sgicons/BG.svg);
+    background-size: cover;
+    padding: 10px;
+    background-color: #011117;
+    color: white;
+    background-position-y: center;
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
+      .heading{
+        margin: 30px 5px;
+        p{
+          font-family: BlueNight;
+          font-size: 3.2rem;
+          margin-bottom:5px;
+          margin-top: 20px;
+          line-height: 65px;
+          letter-spacing: 4px;
+          -webkit-text-stroke: 2.4px black;
+          text-shadow: 3px 5px 0px #4dd8d3;
+        }
+        h5{
+          span{
+            color: #4dd8d3;
+          }
+        }
+    
+      }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
+      .features{
+        .slides{
+          ion-slides{
+            padding-bottom: 30px;
 
-  color: #8c8c8c;
-
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
+            ion-slide{
+              ion-card{
+                ion-img{
+                    width: 70px;
+                    margin: 0 auto;
+                    margin-bottom: 20px;
+                }
+                ion-card-header{
+                  padding: 0px;
+                  color: white;
+                  margin: 40px 0px 10px 0;
+                  font-weight: 400;
+                }
+                padding: 1rem;
+                background: #1e5a5852;
+                color: white;
+                font-size: 20px;
+              }
+            }
+          }
+        }
+      }
+  }
+  .stars{
+    width: 100%;
+    height: 100%;
+    background-image: url(../../assets/sgicons/stars.svg);
+    background-position-x: unset;
+    // opacity: 0.8;
+  }
 }

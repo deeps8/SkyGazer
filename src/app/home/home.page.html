@@ -1,20 +1,58 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div class="container ion-padding">  
+    <div class="stars"> 
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-icon src="../../assets/sgicons/logo.svg" alt="logo"></ion-icon>
+        </ion-buttons>
+        <ion-title size="large">SKY<br>GAZING</ion-title>
+      </ion-toolbar>
+      <div class="heading">
+        <p>EXPLORE THE UNIVERSE</p>
+        <h5> <span>Look</span> up to <span>Sky</span> and get <span>Lost</span> in it.</h5>
+      </div>
+      <div class="features">
+        <div class="slides">
+          <ion-slides pager="true" [options]="slideOpts">
+            <ion-slide>
+              <ion-card class="ft-card">
+                <ion-img src="../../assets/sgicons/Group 19.svg"></ion-img>
+                <ion-card-header>Picture of the Day</ion-card-header> 
+              </ion-card>
+            </ion-slide>
+            <ion-slide>
+              <ion-card class="ft-card">
+                <ion-img src="../../assets/sgicons/Group 19.svg"></ion-img>
+                <ion-card-header>Picture of the Day</ion-card-header> 
+              </ion-card>
+            </ion-slide>
+            <ion-slide>
+              <ion-card class="ft-card">
+                <ion-img src="../../assets/sgicons/Group 19.svg"></ion-img>
+                <ion-card-header>Picture of the Day</ion-card-header> 
+              </ion-card>
+            </ion-slide>
+            <ion-slide>
+              <ion-card class="ft-card">
+                <ion-img src="../../assets/sgicons/Group 19.svg"></ion-img>
+                <ion-card-header>Picture of the Day</ion-card-header> 
+              </ion-card>
+            </ion-slide><ion-slide>
+              <ion-card class="ft-card">
+                <ion-img src="../../assets/sgicons/Group 19.svg"></ion-img>
+                <ion-card-header>Picture of the Day</ion-card-header> 
+              </ion-card>
+            </ion-slide><ion-slide>
+              <ion-card class="ft-card">
+                <ion-img src="../../assets/sgicons/Group 19.svg"></ion-img>
+                <ion-card-header>Picture of the Day</ion-card-header> 
+              </ion-card>
+            </ion-slide>
+            
+          </ion-slides>
+        </div>
+      </div>
+    </div>
   </div>
 </ion-content>
