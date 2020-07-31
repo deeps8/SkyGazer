@@ -1,54 +1,83 @@
 
 <ion-content [fullscreen]="true">
-  <div class="container ion-padding">  
-    <div class="stars"> 
-      <ion-toolbar>
+  <div class="container ion-padding"> 
+    <div class="stars"></div> 
+    <div> 
+      <ion-toolbar color="clear">
         <ion-buttons slot="start">
           <ion-icon src="../../assets/sgicons/logo.svg" alt="logo"></ion-icon>
         </ion-buttons>
         <ion-title size="large">SKY<br>GAZING</ion-title>
+        <ion-buttons slot="end" >
+          <ion-menu-button style="font-size: 2rem;color: white;"></ion-menu-button>
+        </ion-buttons>
       </ion-toolbar>
       <div class="heading">
+        <div>
+          <ion-icon class="plt1" src="../../assets/sgicons/planet1.svg" alt="logo"></ion-icon>
+          <ion-icon class="plt2" src="../../assets/sgicons/planet2.svg" alt="logo"></ion-icon>
+          <ion-icon class="plt3" src="../../assets/sgicons/planet3.svg" alt="logo"></ion-icon>
+        </div>
         <p>EXPLORE THE UNIVERSE</p>
         <h5> <span>Look</span> up to <span>Sky</span> and get <span>Lost</span> in it.</h5>
       </div>
       <div class="features">
+        <div class="ft">
+          <p>
+           <span>View All</span>
+          </p>
+        </div>
         <div class="slides">
           <ion-slides pager="true" [options]="slideOpts">
             <ion-slide>
-              <ion-card class="ft-card">
-                <ion-img src="../../assets/sgicons/Group 19.svg"></ion-img>
+              <ion-card class="ft-card" routerDirection="root" [routerLink]="['pictureOfDay']">
+                <img src="../../assets/sgicons/Group 19.svg">
                 <ion-card-header>Picture of the Day</ion-card-header> 
+              </ion-card>
+            </ion-slide>
+            <!-- <ion-slide>
+              <ion-card class="ft-card" [routerLink]="['earthImagery']">
+                <ion-img src="../../assets/sgicons/Group 20.svg"></ion-img>
+                <ion-card-header>Space Weather</ion-card-header> 
+              </ion-card>
+            </ion-slide> -->
+            <ion-slide>
+              <ion-card class="ft-card" [routerLink]="['earthImagery']">
+                <img src="../../assets/sgicons/Group 21.svg">
+                <ion-card-header>Earth Imagery</ion-card-header> 
               </ion-card>
             </ion-slide>
             <ion-slide>
               <ion-card class="ft-card">
-                <ion-img src="../../assets/sgicons/Group 19.svg"></ion-img>
-                <ion-card-header>Picture of the Day</ion-card-header> 
+                <img src="../../assets/sgicons/Group 27.svg">
+                <ion-card-header>Mars Weather</ion-card-header> 
               </ion-card>
             </ion-slide>
             <ion-slide>
               <ion-card class="ft-card">
-                <ion-img src="../../assets/sgicons/Group 19.svg"></ion-img>
-                <ion-card-header>Picture of the Day</ion-card-header> 
+                <img src="../../assets/sgicons/Group 28.svg">
+                <ion-card-header>Earth Image Polychrometric</ion-card-header> 
               </ion-card>
             </ion-slide>
             <ion-slide>
               <ion-card class="ft-card">
-                <ion-img src="../../assets/sgicons/Group 19.svg"></ion-img>
-                <ion-card-header>Picture of the Day</ion-card-header> 
-              </ion-card>
-            </ion-slide><ion-slide>
-              <ion-card class="ft-card">
-                <ion-img src="../../assets/sgicons/Group 19.svg"></ion-img>
-                <ion-card-header>Picture of the Day</ion-card-header> 
-              </ion-card>
-            </ion-slide><ion-slide>
-              <ion-card class="ft-card">
-                <ion-img src="../../assets/sgicons/Group 19.svg"></ion-img>
-                <ion-card-header>Picture of the Day</ion-card-header> 
+                <img src="../../assets/sgicons/Group 31.svg">
+                <ion-card-header>Mars Rover Photos</ion-card-header> 
               </ion-card>
             </ion-slide>
+            <ion-slide>
+              <ion-card class="ft-card">
+                <img src="../../assets/sgicons/Group 32.svg">
+                <ion-card-header>TechPort Projects</ion-card-header> 
+              </ion-card>
+            </ion-slide>
+            <ion-slide>
+              <ion-card class="ft-card">
+                <img src="../../assets/sgicons/Group 34.svg">
+                <ion-card-header>Moon/Mars Trek WMTS</ion-card-header> 
+              </ion-card>
+            </ion-slide>
+            
             
           </ion-slides>
         </div>

@@ -1,0 +1,61 @@
+  <ion-toolbar color="dark" style="z-index: 1000;">
+    <ion-buttons slot="start" class="ion-no-margin">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+      <!-- <ion-icon src="../../assets/sgicons/logo.svg" alt="logo"></ion-icon> -->
+    </ion-buttons>
+    <ion-title size="large">Picture of the Day</ion-title>
+    <ion-buttons slot="end" >
+      <ion-menu-button style="font-size: 2rem;color: white;"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+<ion-content  color="dark">
+  <div *ngIf="load" class="container" > 
+    <!-- <div class="stars"></div>  -->
+    <div class="pad-10 datetime">
+      <ion-buttons class="ion-float-right" >
+        <ion-button fill="outline" color="secondary" style="height: 35px">
+          <ion-datetime displayFormat="DDDD, MMMM DD, YYYY" pickerFormat="YYYY-MMMM-DD" color="secondary" (ionChange)="newData($event)" [value]="d"></ion-datetime>
+          <ion-icon name="calendar"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <p>
+        <ion-datetime displayFormat="DDDD, MMMM DD, YYYY" readonly="true" [value]="data.date"></ion-datetime>
+      </p>
+      
+    </div>
+    <div class="pad-10 title">
+      <ion-toolbar color="">
+      <ion-text size="large">{{data.title}}</ion-text>
+      <!-- <ion-buttons slot="end" >
+        <ion-button fill="solid" color="primary">{{data.date}}</ion-button>
+      </ion-buttons> -->
+    </ion-toolbar>
+    </div>
+    <div class="simg" *ngIf="data.media_type == 'video'">
+      <iframe [src]="sanitizer.bypassSecurityTrustResourceUrl(data.url)" allow="autoplay;" frameborder="0" style="width: 100%;
+      min-height: 500px;
+    height: -webkit-fill-available;
+    max-height: 600px;"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="simg" *ngIf="data.media_type == 'image'">
+      <ion-slides [options]="sliderOpt" zoom>
+        <ion-slide>
+          <div class="swiper-zoom-container">
+            <img [src]="data.url" alt="img">
+          </div>
+        </ion-slide>
+      </ion-slides>
+    </div>
+    <div class="story title pad-10 ion-padding-bottom">
+      <h3 size="large" class="ion-no-margin">Story behind it : </h3>
+      <p>{{data.explanation}}</p>
+    </div>
+  </div>
+
+  <div *ngIf="!load" color="dark" class="container ion-text-center">
+    <ion-spinner color="primary" style="margin-top:100px;"></ion-spinner>
+  </div>
+
+</ion-content> 

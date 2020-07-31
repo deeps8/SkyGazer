@@ -1,3 +1,29 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-menu side="end" type="overlay" menuId="first" contentId="main">
+    <ion-content>
+      <ion-list id="inbox-list">
+        <ion-list-header>
+          <ion-toolbar color="clear">
+            <ion-buttons slot="start" class="ion-padding-start">
+              <!-- <ion-icon src="../assets/sgicons/logo.svg"></ion-icon> -->
+            </ion-buttons>
+            <ion-title style="text-transform: capitalize;padding: 0;font-weight: 900;">Explore</ion-title>
+          </ion-toolbar>
+        </ion-list-header>
+        <ion-menu-toggle auto-hide="true" *ngFor="let pages of navigate; let i = index" >
+          <ion-item style="padding: 0px 20px;" routerDirection="root" [routerLink]="[pages.url]" lines="none" detail="false" routerLinkActive="select-item" >
+                  <ion-avatar>
+                    <ion-icon [src]="pages.icon"></ion-icon>
+                  </ion-avatar> 
+                  <ion-label>
+                    {{pages.title}}
+                  </ion-label>  
+            </ion-item>
+        </ion-menu-toggle> 
+      </ion-list>
+      
+
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="main" ></ion-router-outlet>
 </ion-app>

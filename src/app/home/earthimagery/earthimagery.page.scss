@@ -1,0 +1,28 @@
+@import '../pictureofday/pictureofday.page.scss';
+
+ion-content{
+    height: 100vh;
+    .container{
+        .filter{
+            ion-buttons{
+                margin-top: 10px;
+                ion-button{
+                    height: 35px;
+                    margin: 0;
+                    margin-right: 5px;
+                    text-transform: capitalize;
+                    ion-datetime{
+                        padding: 0;
+                        margin-top: 6px;
+                        margin-right: 8px;
+                        font-weight: 600;
+                    }
+                    ion-select{
+                        padding: 0;
+
+                    }
+                }
+            }
+        }
+    }
+}

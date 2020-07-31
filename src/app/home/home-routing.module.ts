@@ -6,6 +6,14 @@ const routes: Routes = [
   {
     path: '',
     component: HomePage,
+  },
+  {
+    path: 'pictureOfDay',
+    loadChildren: () => import('./pictureofday/pictureofday.module').then( m => m.PictureofdayPageModule)
+  },
+  {
+    path: 'earthImagery',
+    loadChildren: () => import('./earthimagery/earthimagery.module').then( m => m.EarthimageryPageModule)
   }
 ];
 

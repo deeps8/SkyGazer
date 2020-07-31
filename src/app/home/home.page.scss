@@ -1,5 +1,6 @@
 
 ion-content{
+  height: 100vh;
   ion-toolbar{
     --background:transparent;
     ion-title{
@@ -14,22 +15,60 @@ ion-content{
     
     ion-buttons{
       ion-icon{
-        font-size: 2.5rem;
+        font-size: 2rem;
+        border-radius: 100%;
       }
     }
   }
   .container{
     width: 100%;
-    height: 100%;
+    min-height: 100%;
     background-image: url(../../assets/sgicons/BG.svg);
     background-size: cover;
     padding: 10px;
-    background-color: #011117;
+    background-color: #040404;
     color: white;
     background-position-y: center;
 
       .heading{
         margin: 30px 5px;
+        position: relative;
+        .plt1{
+          font-size: 35px;
+          position: absolute;
+          right: 19%;
+          top: 0%;
+
+          -webkit-animation: p1orbit 4s linear infinite; /* Chrome, Safari 5 */
+          -moz-animation: p1orbit 4s linear infinite; /* Firefox 5-15 */
+          -o-animation: p1orbit 4s linear infinite; /* Opera 12+ */
+          animation: p1orbit 4s linear infinite; /* Chrome, Firefox 16+, 
+                                                      IE 10+, Safari 5 */
+        }
+        .plt2{
+          font-size: 50px;
+          position: absolute;
+          left: 10%;
+          top: 92%;
+
+          -webkit-animation: p2orbit 6s linear infinite; /* Chrome, Safari 5 */
+          -moz-animation: p2orbit 6s linear infinite; /* Firefox 5-15 */
+          -o-animation: p2orbit 6s linear infinite; /* Opera 12+ */
+          animation: p2orbit 6s linear infinite; /* Chrome, Firefox 16+, 
+                                                      IE 10+, Safari 5 */
+        }
+        .plt3{
+          font-size: 40px;
+          position: absolute;
+          right: 25%;
+          top: 55%;
+
+          -webkit-animation: p3orbit 8s linear infinite; /* Chrome, Safari 5 */
+          -moz-animation: p3orbit 8s linear infinite; /* Firefox 5-15 */
+          -o-animation: p3orbit 8s linear infinite; /* Opera 12+ */
+          animation: p3orbit 8s linear infinite; /* Chrome, Firefox 16+, 
+                                                      IE 10+, Safari 5 */
+        }
         p{
           font-family: BlueNight;
           font-size: 3.2rem;
@@ -38,7 +77,10 @@ ion-content{
           line-height: 65px;
           letter-spacing: 4px;
           -webkit-text-stroke: 2.4px black;
-          text-shadow: 3px 5px 0px #4dd8d3;
+          text-shadow: 3px 5px 0px #ffffff;
+          z-index: 2;
+          position: relative;
+          color: #4dd8d3;
         }
         h5{
           span{
@@ -49,27 +91,50 @@ ion-content{
       }
 
       .features{
+        .ft{
+          p{
+            margin: 0;
+            text-align: right;
+            padding: 0 12px;
+            font-size: 20px;
+            span{
+              color: #4dd8d3;
+              border-bottom: 1px solid;
+              cursor: pointer;
+              font-size: 13px;
+            }
+          }
+        }
         .slides{
           ion-slides{
             padding-bottom: 30px;
-
+            .swiper-pagination-bullet-active{
+              background:white;
+            }
             ion-slide{
+              
               ion-card{
-                ion-img{
+                img{
                     width: 70px;
+                    height: 50px;
                     margin: 0 auto;
-                    margin-bottom: 20px;
+                    //margin-bottom: 20px;
                 }
                 ion-card-header{
                   padding: 0px;
                   color: white;
+                  height: 50px;
                   margin: 40px 0px 10px 0;
                   font-weight: 400;
                 }
                 padding: 1rem;
-                background: #1e5a5852;
+                width: 150px;
+                background: #0f1010;
                 color: white;
-                font-size: 20px;
+                font-size: 15px;
+                border-radius: 10px;
+                outline: none;
+                box-shadow: inset -5px -5px 10px #0c0c0c, inset 5px 5px 10px #121313;
               }
             }
           }
@@ -78,9 +143,100 @@ ion-content{
   }
   .stars{
     width: 100%;
-    height: 100%;
+    position: absolute;
+    min-height: 100%;
+    top: 0;
+    left: 0;
     background-image: url(../../assets/sgicons/stars.svg);
     background-position-x: unset;
+    -moz-animation:twink 4s linear infinite;
+    -ms-animation:twink 4s linear infinite;
+    -o-animation:twink 4s linear infinite;
+    -webkit-animation:twink 4s linear infinite;
+    animation: twink 4s linear infinite;
     // opacity: 0.8;
   }
+}
+
+//planet 1
+@-webkit-keyframes p1orbit {
+  from { -webkit-transform: rotate(0deg) translateX(70px) rotate(0deg); }
+  to   { -webkit-transform: rotate(360deg) translateX(70px) rotate(360deg); }
+}
+
+@-moz-keyframes p1orbit {
+  from { -moz-transform: rotate(0deg) translateX(70px) rotate(0deg); }
+  to   { -moz-transform: rotate(360deg) translateX(70px) rotate(360deg); }
+}
+
+@-o-keyframes p1orbit {
+  from { -o-transform: rotate(0deg) translateX(70px) rotate(0deg); }
+  to   { -o-transform: rotate(360deg) translateX(70px) rotate(360deg); }
+}
+
+@keyframes p1orbit {
+  from { transform: rotate(0deg) translateX(70px) rotate(0deg); }
+  to   { transform: rotate(360deg) translateX(70px) rotate(360deg); }
+}
+
+
+//planet 2
+@-webkit-keyframes p2orbit {
+  from { -webkit-transform: rotate(0deg) translateX(50px) rotate(0deg); }
+  to   { -webkit-transform: rotate(-360deg) translateX(50px) rotate(-360deg); }
+}
+
+@-moz-keyframes p2orbit {
+  from { -moz-transform: rotate(0deg) translateX(50px) rotate(0deg); }
+  to   { -moz-transform: rotate(-360deg) translateX(50px) rotate(-360deg); }
+}
+
+@-o-keyframes p2orbit {
+  from { -o-transform: rotate(0deg) translateX(50px) rotate(0deg); }
+  to   { -o-transform: rotate(-360deg) translateX(50px) rotate(-360deg); }
+}
+
+@keyframes p2orbit {
+  from { transform: rotate(0deg) translateX(50px) rotate(0deg); }
+  to   { transform: rotate(-360deg) translateX(50px) rotate(-360deg); }
+}
+
+//planet 3
+@-webkit-keyframes p3orbit {
+  from { -webkit-transform: rotate(0deg) translateX(90px) rotate(0deg); }
+  to   { -webkit-transform: rotate(-360deg) translateX(90px) rotate(-360deg); }
+}
+
+@-moz-keyframes p3orbit {
+  from { -moz-transform: rotate(0deg) translateX(90px) rotate(0deg); }
+  to   { -moz-transform: rotate(-360deg) translateX(90px) rotate(-360deg); }
+}
+
+@-o-keyframes p3orbit {
+  from { -o-transform: rotate(0deg) translateX(90px) rotate(0deg); }
+  to   { -o-transform: rotate(-360deg) translateX(90px) rotate(-360deg); }
+}
+
+@keyframes p3orbit {
+  from { transform: rotate(0deg) translateX(90px) rotate(0deg); }
+  to   { transform: rotate(-360deg) translateX(90px) rotate(-360deg); }
+}
+
+//twinkle stars
+@keyframes twink {
+  50% {
+    opacity: 0.2;
+  }
+}
+@-webkit-keyframes twink {
+  from { opacity: 1.0; }
+  to { opacity: 0.2; }
+}
+@-moz-keyframes twink {
+  from { opacity: 1.0; }
+  to { opacity: 0.2; }
+}
+@-ms-keyframes twink {
+  from { opacity: 1.0; }
+  to { opacity: 0.2; }
 }
