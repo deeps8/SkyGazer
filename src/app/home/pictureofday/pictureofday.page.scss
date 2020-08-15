@@ -1,34 +1,4 @@
-ion-content{
-    height: 100vh;
-    ion-toolbar{
-      --background:transparent;
-      ion-title{
-        font-size: 1rem;
-      padding: 4px 0 0 4px;
-      word-break: break-word;
-      color: white;
-      font-weight: 100;
-      font-family: bluenight;
-      letter-spacing: 1px;
-      }
-      
-      ion-buttons{
-        ion-icon{
-          font-size: 2rem;
-          border-radius: 100%;
-        }
-      }
-    }
-    .container{
-      width: 100%;
-      min-height: 100%;
-    padding: 0 !important;
-    background-image: unset !important;
-    background: #0f1010 !important;
 
-    .pad-10{
-        padding: 2px 10px;
-    }
 
     .datetime{
         ion-buttons{
@@ -47,7 +17,7 @@ ion-content{
             padding: 4px;
             margin-top: 10px;
             font-weight: bold;
-            color: var(--ion-color-secondary);
+            color: var(--ion-color-tertiary);
 
             ion-datetime{
                 padding: 0;
@@ -92,6 +62,3 @@ ion-content{
             color: var(--ion-color-light-shade);
         }
     }
-
- }    
-}

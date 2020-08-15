@@ -1,0 +1,15 @@
+<ion-content>
+    <div>
+        <ion-img [src]="rdata.img_src"></ion-img>
+        <div class="details">
+            <h2>{{rdata.rover.name}} Rover</h2> <span>{{rdata.rover.status}}</span>
+            <h4>{{rdata.camera.full_name}}</h4>
+            <p>
+                Launched from Earth on {{rdata.rover.launch_date}} and landed on Mars at {{rdata.rover.landing_date}} .
+            </p>
+        </div>
+    </div>
+    
+    
+    <ion-button class="close-btn" fill="clear" (click)="dismiss()"><ion-icon name="close-circle"></ion-icon></ion-button>
+</ion-content>

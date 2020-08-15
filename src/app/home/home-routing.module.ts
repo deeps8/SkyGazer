@@ -14,6 +14,18 @@ const routes: Routes = [
   {
     path: 'earthImagery',
     loadChildren: () => import('./earthimagery/earthimagery.module').then( m => m.EarthimageryPageModule)
+  },
+  {
+    path: 'marsweather',
+    loadChildren: () => import('./marsweather/marsweather.module').then( m => m.MarsweatherPageModule)
+  },
+  {
+    path: 'marsrover',
+    loadChildren: () => import('./marsrover/marsrover.module').then( m => m.MarsroverPageModule)
+  },
+  {
+    path: 'nasagallery',
+    loadChildren: () => import('./nasagallery/nasagallery.module').then( m => m.NasagalleryPageModule)
   }
 ];
 

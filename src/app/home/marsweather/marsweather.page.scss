@@ -1,0 +1,114 @@
+ion-content{
+    .container{
+        .banner{
+            padding: 10px;
+            position: relative;
+            background: url('../../../assets/sgicons/Mars_landing.png'), linear-gradient(10deg,var(--ion-color-dark),transparent);
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 200px;
+            background-blend-mode: overlay;
+
+            .banner-content{
+                position: absolute;
+                bottom: 0px;
+                width: 95%;
+            }
+
+        }
+
+        .report-tabs{
+            ion-segment{
+                ion-segment-button{
+                        color: var(--ion-color-medium-shade);
+                        text-transform: capitalize;
+                        font-size: 14px;
+                        letter-spacing: 0.5px;
+                        // transition: all 1s ease-in;
+
+                        ion-icon{
+                            font-size: 18px;
+                        }
+                    
+                }
+            }
+
+            .seg-content{
+                .seg-title{
+                    margin: 0 10px;
+                    display: grid;
+                            grid-template-columns: repeat(12, 1fr);
+                    p{
+                        grid-column: 1 / span 7;
+                        margin: 5px 0;
+                    }
+                    ion-segment{
+                        grid-column: 8 / span 12;
+                        ion-segment-button{
+                            font-weight: 600;
+                        }
+
+                    }
+                }
+
+                .seg-cards{
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit,minmax(120px,1fr));
+                    
+                    .seg-card{
+                        background-color:var(--ion-color-light-contrast);
+                        border-radius: 5px;
+                        margin: 10px;
+                        text-align: center;
+
+                        div{
+                            padding: 10px 0;
+                            border-top-left-radius: 5px;
+                            border-top-right-radius: 5px;
+
+                            p{
+                                margin: 0;
+                                font-size: 18px;
+                               
+                            }
+                            span{
+                                font-size: 12px;
+                                ion-datetime{
+                                    padding: 0;
+                                    opacity: 0.7;
+                                }
+                            }
+                        }
+
+                        p{
+                            font-size: 15px;
+                            margin: 12px 0;
+                        }
+                        
+                    }
+                }
+            }
+        }
+
+        .not_active{
+            color: var(--ion-color-medium-shade);
+        }
+        .showseg{
+            display: none;
+        }
+        .ripple-parent {
+            position: relative;
+            overflow: hidden;
+          }
+        .temp{
+            background-color: var(--ion-color-tertiary-tint);  
+        }  
+        .wind{
+            background-color: #1d47d2;
+        }  
+        .pressure{
+            background-color: #d41c1c;
+        }
+
+    }
+}

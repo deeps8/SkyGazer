@@ -1,0 +1,88 @@
+ion-content{
+    .src-bar{
+        padding: 0 7px;
+        position: sticky;
+        top: 0;
+        z-index: 20000;
+        background: var(--ion-color-dark);
+        span{
+            margin: 8px;
+            letter-spacing: 0.5px;
+        }
+        ion-buttons{
+            padding: 5px 7px;
+            margin-right: 4%;
+
+            ion-button{
+                text-transform: capitalize;
+                margin-right: 4%;
+                font-weight: 600;
+                ion-select,ion-datetime{
+                    padding: 10px 0px 10px 3px;
+                }
+                ion-datetime{
+                    padding: 0;
+                    padding-top: 7px;
+                }
+                
+            }
+        }
+    }
+    .src-items{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1rem;
+        grid-auto-rows: minmax(100px, auto);
+        padding: 0 17px;
+        margin-bottom: 20px;
+        
+        .src-content{
+            background: black;
+            display: flex;
+            flex-direction: column;
+            border-radius: 5px;
+            overflow: hidden;
+            .thumb-img{
+                height: 90px;
+                overflow: hidden;
+                background: grey;
+                position: relative;
+            }
+        }
+        .play-vid{
+            position: absolute;
+            top: 0;
+            z-index: 2;
+            width: 100%;
+            height: 100%;
+            display: grid;
+            place-content: center;
+            font-size: 60px;
+            opacity: 0.8;
+            background: #3336;
+        }
+        .src-desc{
+            padding: 10px;
+            font-size: 10px;
+            color: var(--ion-color-medium-shade);
+            font-weight: 100;
+
+            p{
+                margin: 5px 0 0 0;
+                word-spacing: 1px;
+                font-size: 11px;
+                line-height: 16px;
+                color: var(--ion-color-light);
+            }
+        }
+    }
+    .pod{
+        position: relative;
+        height: 90px;
+        background: #224379;
+    }
+    .ripple-parent {
+        position: relative;
+        overflow: hidden;
+      }
+}

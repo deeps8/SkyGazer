@@ -1,0 +1,45 @@
+<ion-content>
+  <ion-button class="close-btn" fill="clear" (click)="dismiss()"><ion-icon name="close-circle"></ion-icon></ion-button>
+<div class="modal-content">
+  <div class="modal-head">
+    <span>{{libdata.data[0].center}} </span> <span>{{timefun(libdata.data[0].date_created)}} ago</span> 
+  </div>
+  <div>
+    <div  class="thumb-img" *ngIf="libdata.links" (click)="videoClick()" >
+      <div *ngIf="!vclick">
+        <div *ngIf="libdata.data[0].media_type === 'video'" class="play-vid">
+          <ion-icon name="play"></ion-icon>
+        </div>
+        <ion-img style="width: 105%;" *ngIf="libdata.links[0].href" [src]="libdata.links[0].href"></ion-img>
+      </div>
+      <div *ngIf="vclick">
+        <video controls style="width:100%" [poster]="libdata.links[0].href" preload="auto" autoplay>
+          <source [src]="mediaCollection[2]" 
+                  type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"' />
+        </video>
+      </div>
+    </div>
+    
+
+    <div class="pod" *ngIf="!libdata.links">
+      <div *ngIf="libdata.data[0].media_type === 'audio'" class="play-vid">
+        <div class="play-vid">
+          <ion-icon name="mic"></ion-icon>
+        </div>
+        <audio *ngIf="mediaCollection" controls>
+          <source [src]="mediaCollection[2]"  type="audio/mp3">
+        </audio> 
+      </div>
+    </div>
+  </div>
+  <div class="src-desc">
+    <!-- <span>{{timefun(data.data[0].date_created)}}</span> -->
+    <h4 class="modal-title">{{libdata.data[0].title}}</h4>
+    <span>{{libdata.data[0].media_type}}</span>
+    <p class="desc">
+      {{libdata.data[0].description}}
+    </p>
+  </div>
+</div>
+  
+</ion-content>

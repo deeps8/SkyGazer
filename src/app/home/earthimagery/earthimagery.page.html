@@ -14,17 +14,17 @@
   <!-- <div class="stars"></div>  -->
   <div class="pad-10 filter">
     <ion-buttons slot="end" class="" >
-      <ion-button slot="start" fill="outline" color="primary">
+      <ion-button slot="start" fill="solid" color="primary">
           <ion-select [value]="category" #catg (ionChange)="getCategory(catg,dg)" >
             <ion-select-option value="natural">Natural Image</ion-select-option>
             <ion-select-option value="enhanced">Enhanced Image</ion-select-option>
           </ion-select>
       </ion-button>
-      <ion-button class="date-time" fill="outline" color="secondary" >
+      <ion-button class="date-time" fill="solid" color="secondary" >
         <ion-datetime [value]="date" #dg (ionChange)="getCategory(catg,dg)"  displayFormat="MMM-DD-YYYY" pickerFormat="YYYY-MMMM-DD"  color="secondary" ></ion-datetime>
         <ion-icon name="calendar"></ion-icon>
       </ion-button>
-      <ion-button slot="end" fill="outline" color="tertiary" (click)="autoPlay()">
+      <ion-button slot="end" fill="solid" color="tertiary" (click)="autoPlay()">
         <ion-icon  *ngIf="autoValue" name="play"></ion-icon>
         <ion-icon  *ngIf="!autoValue" name="pause"></ion-icon>
       </ion-button>

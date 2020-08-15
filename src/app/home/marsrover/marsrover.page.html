@@ -1,0 +1,58 @@
+<ion-toolbar color="dark" style="z-index: 1000;">
+  <ion-buttons slot="start" class="ion-no-margin">
+    <ion-back-button defaultHref="/home"></ion-back-button>
+    <!-- <ion-icon src="../../assets/sgicons/logo.svg" alt="logo"></ion-icon> -->
+  </ion-buttons>
+  <ion-title size="large">Mars Rover Gallery</ion-title>
+  <ion-buttons slot="end" >
+    <ion-menu-button style="font-size: 2rem;color: white;"></ion-menu-button>
+  </ion-buttons>
+</ion-toolbar>
+
+<ion-content  color="dark">
+  <div  class="container" >
+    
+    <div class="">
+      <div class="pad-10 datetime">
+        <ion-buttons class="ion-float-right" >
+          <ion-button fill="solid" color="tertiary" style="height: 40px;width: 40px; --border-radius: 100%;">
+            <ion-datetime displayFormat="DDDD, MMMM DD, YYYY" pickerFormat="YYYY-MMMM-DD" (ionChange)="newData($event)" [value]="date"></ion-datetime>
+            <ion-icon name="calendar"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+        <p>
+          <ion-datetime displayFormat="DDDD, MMMM DD, YYYY" readonly="true" [value]="date"></ion-datetime>
+        </p>
+        <h5>Photos clicked by NASA's Curiosity, Opportunity, and Spirit rovers on Mars</h5>
+      </div>
+      
+      <div *ngIf="load" >
+
+      <div class="pad-10 gallery ">
+        <div *ngFor="let item of response" class="ion-activatable ripple-parent" (click)="presentModal(item.img_src,item)">
+          <ion-img [src]="item.img_src ||date"></ion-img>
+          <span>{{item.camera.name}}</span>
+          <ion-ripple-effect></ion-ripple-effect>
+        </div>
+      </div>
+
+    
+        <ion-infinite-scroll threshold="100px" 
+                            [disabled] = "finished"
+                            color="primary"
+                            (ionInfinite)="loadData($event)">
+          <ion-infinite-scroll-content
+            loadingSpinner="circular"
+            loadingText="Loading more data...">
+          </ion-infinite-scroll-content>
+        </ion-infinite-scroll>
+      
+      </div>
+      <div *ngIf="!load" color="dark" class="container ion-text-center">
+        <ion-spinner color="primary" style="margin-top:100px;"></ion-spinner>
+      </div>
+      
+  </div>
+  </div>
+      
+</ion-content>

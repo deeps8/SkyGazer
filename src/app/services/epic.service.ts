@@ -39,7 +39,7 @@ export class EpicService {
     };
 
     this.imgurl= this.imgurl + category + '/' + date + '/png/' + imgname + this.api; 
-    console.log(this.imgurl);
+    //console.log(this.imgurl);
     return <any>this.http.get(this.url,this.httpOptions);
   }
                 

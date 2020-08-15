@@ -1,0 +1,123 @@
+<ion-toolbar color="dark" style="z-index: 1000;">
+  <ion-buttons slot="start" class="ion-no-margin">
+    <ion-back-button defaultHref="/home"></ion-back-button>
+    <!-- <ion-icon src="../../assets/sgicons/logo.svg" alt="logo"></ion-icon> -->
+  </ion-buttons>
+  <ion-title size="large">Mars Weather Report</ion-title>
+  <ion-buttons slot="end" >
+    <ion-menu-button style="font-size: 2rem;color: white;"></ion-menu-button>
+  </ion-buttons>
+</ion-toolbar>
+
+<ion-content  color="dark">
+  <div  class="container" >
+    <div class="banner">
+      <div class="banner-content">
+        <h4>Latest Weather at Elysium Planitia</h4>
+        <p style="font-size: 14px; line-height: 20px;">
+          InSight is taking daily weather measurements (temperature, wind, pressure) on the surface of Mars at Elysium Planitia, a flat, smooth plain near Mars’ equator.
+        </p>
+      </div>
+    </div>
+
+    <div class="report-tabs">
+      <ion-segment color="tertiary" (ionChange)="segmentChanged($event)" [(ngModel)]="segment" >
+        <ion-segment-button style="--ion-color-base: var(--ion-color-tertiary-tint)" 
+                            [ngClass]="{not_active: segment != 'temp'}" value="temp">
+          <ion-icon name="thermometer-outline"></ion-icon>
+          <ion-label>Temperature</ion-label>
+        </ion-segment-button>
+        <ion-segment-button style="--ion-color-base: #1d47d2"
+                            [ngClass]="{not_active: segment != 'wind'}" value="wind">
+          <ion-icon name="leaf"></ion-icon>
+          <ion-label>Wind Speed</ion-label>
+        </ion-segment-button>
+        <ion-segment-button style="--ion-color-base: #d41c1c"
+                            [ngClass]="{not_active: segment != 'pressure'}" value="pressure">
+          <ion-icon name="speedometer"></ion-icon>
+          <ion-label>Pressure</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+
+      <div class="seg-content pad-10" *ngIf="data">
+        <div [ngClass]="{showseg: segment != 'temp'}">
+          <div class="seg-title">
+            <p>Air Temperature : </p>
+            <ion-segment  mode="ios" (ionChange)="tempChange($event)" value="c">
+              <ion-segment-button value="f">
+                <ion-label>&#8457;</ion-label>
+              </ion-segment-button>
+              <ion-segment-button value="c">
+                <ion-label>&#8451;</ion-label>
+              </ion-segment-button>
+            </ion-segment>
+          </div>
+          <div class="seg-cards" >
+            <div class="seg-card ion-activatable ripple-parent" *ngFor="let sol of solKeys">
+              <div class="temp">
+                <p>Sol {{sol}}</p>
+                <span><ion-datetime displayFormat="MMM DD, YYYY" readonly="true" [value]="response[sol].First_UTC"></ion-datetime></span>
+              </div>
+              <p>High : {{response[sol].AT.mx.toFixed(1)}}</p>
+              <p>Low : {{response[sol].AT.mn.toFixed(1)}}</p>
+              <ion-ripple-effect></ion-ripple-effect>
+ 
+            </div>
+          </div>
+        </div>
+
+        <div  [ngClass]="{showseg: segment != 'wind'}" >
+          <div class="seg-title">
+            <p>Wind Speed : </p>
+            <ion-segment  mode="ios" (ionChange)="windChange($event)" value="ms">
+              <ion-segment-button value="mph">
+                <ion-label>mph</ion-label>
+              </ion-segment-button>
+              <ion-segment-button value="ms">
+                <ion-label>m/s</ion-label>
+              </ion-segment-button>
+            </ion-segment>
+          </div>
+          <div class="seg-cards">
+            <div class="seg-card ion-activatable ripple-parent" *ngFor="let sol of solKeys">
+              <div class="wind">
+                <p>Sol {{sol}}</p>
+                <span><ion-datetime displayFormat="MMM DD, YYYY" readonly="true" [value]="response[sol].First_UTC"></ion-datetime></span>
+              </div>
+              <p>High : {{response[sol].HWS.mx.toFixed(1)}}</p>
+              <p>Low : {{response[sol].HWS.mn.toFixed(1)}}</p>
+              <ion-ripple-effect></ion-ripple-effect>
+ 
+            </div>
+          </div>
+        </div>
+        <div [ngClass]="{showseg: segment != 'pressure'}">
+          <div class="seg-title">
+            <p>Pressure : </p>
+            <ion-segment  mode="ios" value="pa">
+              <ion-segment-button value="pa">
+                <ion-label>pa</ion-label>
+              </ion-segment-button>
+            </ion-segment>
+          </div>
+          <div class="seg-cards">
+            <div class="seg-card ion-activatable ripple-parent" *ngFor="let sol of solKeys">
+              <div class="pressure">
+                <p>Sol {{sol}}</p>
+                <span><ion-datetime displayFormat="MMM DD, YYYY" readonly="true" [value]="response[sol].First_UTC"></ion-datetime></span>
+              </div>
+              <p>High : {{response[sol].PRE.mx.toFixed(1)}}</p>
+              <p>Low : {{response[sol].PRE.mn.toFixed(1)}}</p>
+              <ion-ripple-effect></ion-ripple-effect>
+ 
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf="!data" color="dark" class="container ion-text-center">
+        <ion-spinner color="primary" style="margin-top:100px;"></ion-spinner>
+      </div>  
+      
+    </div>
+  </div>

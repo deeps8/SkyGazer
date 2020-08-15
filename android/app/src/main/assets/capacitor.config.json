@@ -6,11 +6,12 @@
   "webDir": "www",
   "plugins": {
     "SplashScreen": {
-      "launchShowDuration": 2000,
-      "fadeOutDuration" : 100,
+      "launchShowDuration": 1000,
+      "fadeOutDuration": 100,
       "launchAutoHide": true,
       "backgroundColor": "#0f1010",
       "androidSplashResourceName": "splash",
+      "androidScaleType": "CENTER_CROP",
       "androidSpinnerStyle": "large",
       "iosSpinnerStyle": "small",
       "spinnerColor": "#ffffff",
