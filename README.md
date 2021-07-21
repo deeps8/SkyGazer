@@ -7,3 +7,5 @@ SkyGazer is an Ionic - Angular app based on NASA public API . Providing informat
 3. Mars Rover Pictures.
 4. Earth Imagery.
 5. Mars Weather.
+
+[Download APK](https://appsenjoy.com/files/372ac462627ff47fc0a8b53f212487c5.apk)
